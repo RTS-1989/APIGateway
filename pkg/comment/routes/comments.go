@@ -2,11 +2,10 @@ package routes
 
 import (
 	"context"
-	"net/http"
-	"strconv"
-
 	"github.com/RTS-1989/go-api-gateway/pkg/comment/pb"
 	"github.com/gin-gonic/gin"
+	"net/http"
+	"strconv"
 )
 
 func Comments(ctx *gin.Context, c pb.CommentServiceClient) {

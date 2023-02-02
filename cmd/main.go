@@ -1,16 +1,15 @@
 package main
 
 import (
-	"github.com/RTS-1989/go-api-gateway/pkg/models"
-	"github.com/RTS-1989/go-api-gateway/pkg/textParser"
-	"log"
-	"strings"
-
 	"github.com/RTS-1989/go-api-gateway/pkg/auth"
 	"github.com/RTS-1989/go-api-gateway/pkg/comment"
 	"github.com/RTS-1989/go-api-gateway/pkg/config"
 	"github.com/RTS-1989/go-api-gateway/pkg/gonews"
+	"github.com/RTS-1989/go-api-gateway/pkg/models"
+	"github.com/RTS-1989/go-api-gateway/pkg/textParser"
 	"github.com/gin-gonic/gin"
+	"log"
+	"strings"
 )
 
 func main() {

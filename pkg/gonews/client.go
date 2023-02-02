@@ -2,7 +2,6 @@ package gonews
 
 import (
 	"fmt"
-
 	"github.com/RTS-1989/go-api-gateway/pkg/config"
 	"github.com/RTS-1989/go-api-gateway/pkg/gonews/pb"
 	"google.golang.org/grpc"

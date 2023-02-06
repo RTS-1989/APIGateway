@@ -3,17 +3,13 @@ package comment
 import (
 	"fmt"
 	"github.com/RTS-1989/go-api-gateway/pkg/comment/middleware"
-	"github.com/RTS-1989/go-api-gateway/pkg/models"
-
 	"github.com/RTS-1989/go-api-gateway/pkg/comment/pb"
 	"github.com/RTS-1989/go-api-gateway/pkg/config"
 	"google.golang.org/grpc"
 )
 
 type ServiceClient struct {
-	Client     pb.CommentServiceClient
-	inComment  chan models.CreateCommentRequestBody
-	outComment chan models.CreateCommentRequestBody
+	Client pb.CommentServiceClient
 }
 
 func InitServiceClient(c *config.Config) pb.CommentServiceClient {

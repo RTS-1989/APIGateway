@@ -6,6 +6,7 @@ import (
 	"github.com/RTS-1989/go-api-gateway/pkg/comment"
 	"github.com/RTS-1989/go-api-gateway/pkg/config"
 	"github.com/RTS-1989/go-api-gateway/pkg/gonews"
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"log"
 )
@@ -18,6 +19,14 @@ func main() {
 	}
 
 	r := gin.Default()
+	corsConfig := cors.DefaultConfig()
+	corsConfig.AllowOrigins = []string{
+		c.FrontendSvcUrl,
+	}
+	corsConfig.AllowCredentials = true
+	corsConfig.AllowHeaders = []string{"Origin", "Content-Length", "Content-Type", "Authorization"}
+	corsConfig.AllowMethods = []string{"GET", "POST", "PUT"}
+	r.Use(cors.New(corsConfig))
 
 	authSvc := *auth.RegisterRoutes(r, &c)
 	gonews.RegisterRoutes(r, &c, &authSvc)
